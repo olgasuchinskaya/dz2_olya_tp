@@ -66,7 +66,7 @@ class Recipe:
             raise ValueError("Коэффициент должен быть положительным")
     
     def __len__(self):
-        return len(self.ingredients)
+        return len(set(self.ingredients))
 
     
     def __str__(self):
@@ -144,5 +144,4 @@ class DietaryRecipe(Recipe):
     
     def __str__(self):
         return f"[{self.diet_type}] {super().__str__()}"
-        
-                
+
